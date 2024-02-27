@@ -10,6 +10,8 @@
 #include <map>
 #include <memory>
 #include <string>
+#include <iostream>
+#include <fstream>
 
 namespace nts {
     /**
@@ -19,5 +21,14 @@ namespace nts {
         Undefined = (-true),
         True = true,
         False = false
+    };
+
+    class Error : public std::exception {
+      public:
+        Error(std::string const &message) : _message(message) {}
+        const char *what() const noexcept override { return _message.c_str(); } // MAYBE: move to proper file
+
+      private:
+        std::string _message;
     };
 }
