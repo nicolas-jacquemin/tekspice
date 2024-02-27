@@ -12,6 +12,10 @@
 #include <string>
 #include <iostream>
 #include <fstream>
+#include <vector>
+#include <sstream>
+
+void parser(const std::string &configPath);
 
 namespace nts {
     /**
