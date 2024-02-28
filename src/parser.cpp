@@ -37,7 +37,7 @@ void parser(const std::string &configPath) {
         throw nts::Error("Could not open file \"" + configPath + "\"");
 
     std::string type = "";
-    std::vector<std::pair<std::string, std::string>> chipsets;
+    std::map<std::string, std::string> chipsets;
     std::vector<std::pair<std::string, std::string>> links;
 
     std::string line;
@@ -52,13 +52,17 @@ void parser(const std::string &configPath) {
             if (tokens[0] != ".chipsets:" && tokens[0] != ".links:")
                 throw nts::Error("Invalid file format");
             type = tokens[0];
-            // std::cout << type << std::endl;
             continue;
 
         case 2:
             if (type == "")
                 throw nts::Error("Invalid file format: declaration misplaced");
-            // std::cout << tokens[0] << " " << tokens[1] << std::endl;
+            else if (type == ".chipsets:") {
+                if (chipsets.find(tokens[1]) != chipsets.end())
+                    throw nts::Error("Invalid file format: duplicate chipset name");
+                chipsets.insert(std::make_pair(tokens[1], tokens[0]));
+            } else
+                links.push_back(std::make_pair(tokens[0], tokens[1]));
             continue;
 
         default:
