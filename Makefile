@@ -7,6 +7,7 @@
 
 SRC		=	src/main.cpp \
 			src/parser.cpp \
+			src/shell/shell.cpp \
 			src/Circuit.cpp \
 			src/Component.cpp \
 			src/Factory.cpp \

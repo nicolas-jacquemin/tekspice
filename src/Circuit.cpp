@@ -8,6 +8,7 @@
 #include "Circuit.hpp"
 #include "Factory.hpp"
 
+// TODO: move to proper file
 static std::pair<std::string, size_t> splitLink(std::string str) {
     std::stringstream stream(str);
     std::string component = "";

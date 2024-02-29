@@ -8,6 +8,10 @@
 #include "nts.hpp"
 #include "Circuit.hpp"
 
+// TODO: move to proper file
+void shell(nts::Circuit circuit);
+
+// TODO: move to proper file
 static std::string uncomment(const std::string line) {
     std::size_t index = line.find('#');
 
@@ -17,6 +21,7 @@ static std::string uncomment(const std::string line) {
     return (line);
 };
 
+// TODO: move to proper file
 static std::vector<std::string> splitTrim(const std::string line) {
     std::stringstream stream(line);
     std::vector<std::string> tokens;
@@ -68,5 +73,5 @@ void parser(const std::string &configPath) {
     }
 
     file.close();
-    nts::Circuit circuit(chipsets, links);
+    shell(nts::Circuit(chipsets, links));
 }
