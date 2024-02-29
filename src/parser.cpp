@@ -5,36 +5,7 @@
 ** Parser
 */
 
-#include "nts.hpp"
-#include "Circuit.hpp"
-
-// TODO: move to proper file
-void shell(nts::Circuit circuit);
-
-// TODO: move to proper file
-static std::string uncomment(const std::string line) {
-    std::size_t index = line.find('#');
-
-    if (index != std::string::npos)
-        return (line.substr(0, index));
-
-    return (line);
-};
-
-// TODO: move to proper file
-static std::vector<std::string> splitTrim(const std::string line) {
-    std::stringstream stream(line);
-    std::vector<std::string> tokens;
-
-    std::string token;
-    while (std::getline(stream, token, ' ')) {
-        if (token == "")
-            continue;
-        tokens.push_back(token);
-    }
-
-    return (tokens);
-}
+#include "utils.hpp"
 
 void parser(const std::string &configPath) {
     std::ifstream file(configPath);
@@ -48,7 +19,7 @@ void parser(const std::string &configPath) {
 
     std::string line;
     while (std::getline(file, line)) {
-        std::vector<std::string> tokens = splitTrim(uncomment(line));
+        std::vector<std::string> tokens = splitTrimString(uncommentString(line));
         switch (tokens.size()) {
         case 0:
             continue;

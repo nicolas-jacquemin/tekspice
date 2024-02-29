@@ -5,34 +5,8 @@
 ** Circuit
 */
 
-#include "Circuit.hpp"
+#include "utils.hpp"
 #include "Factory.hpp"
-
-// TODO: move to proper file
-static std::pair<std::string, size_t> splitLink(std::string str) {
-    std::stringstream stream(str);
-    std::string component = "";
-    size_t pin = 0;
-
-    std::string token;
-    for (int index = 0; std::getline(stream, token, ':'); index++) {
-        switch (index) {
-        case 0:
-            component = token;
-            break;
-        case 1:
-            pin = std::stoi(token);
-            break;
-        default:
-            throw nts::Error("Invalid file format: bad link format");
-        }
-    }
-
-    if (component == "" || pin == 0)
-        throw nts::Error("Invalid file format: bad link format");
-
-    return (std::make_pair(component, pin));
-}
 
 nts::Circuit::Circuit(std::map<std::string, std::string> components, std::vector<std::pair<std::string, std::string>> links) {
     nts::ComponentFactory factory;

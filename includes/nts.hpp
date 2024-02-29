@@ -15,8 +15,6 @@
 #include <vector>
 #include <sstream>
 
-void parser(const std::string &configPath);
-
 namespace nts {
     /**
      * @brief The state of a pin: either True (`true`), False (`false`) or Undefined (`-1`)
