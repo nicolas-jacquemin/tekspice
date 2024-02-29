@@ -15,6 +15,7 @@
 #include "components/Output.hpp"
 #include "components/Input.hpp"
 #include "components/Clock.hpp"
+#include "components/And.hpp"
 
 namespace nts {
     class ComponentFactory {
@@ -33,6 +34,7 @@ namespace nts {
             {"output", &nts::ComponentFactory::createComponent<nts::Components::Output>},
             {"input", &nts::ComponentFactory::createComponent<nts::Components::Input>},
             {"clock", &nts::ComponentFactory::createComponent<nts::Components::Clock>},
+            {"and", &nts::ComponentFactory::createComponent<nts::Components::And>}
         };
     };
 }

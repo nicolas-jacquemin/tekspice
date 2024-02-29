@@ -8,7 +8,8 @@
 SRC		=	src/main.cpp \
 			src/utils.cpp \
 			src/parser.cpp \
-			src/shell/shell.cpp \
+			src/shell.cpp \
+			src/gates.cpp \
 			src/Circuit.cpp \
 			src/Component.cpp \
 			src/Factory.cpp \
@@ -19,6 +20,7 @@ SRC		=	src/main.cpp \
 			src/components/Output.cpp \
 			src/components/Input.cpp \
 			src/components/Clock.cpp \
+			src/components/And.cpp \
 
 # TODO: Fix obj files
 # OBJ		=	$(SRC:.cpp=.o)
