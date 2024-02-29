@@ -19,6 +19,7 @@ namespace nts {
 
     class AComponent : public IComponent {
       public:
+        // TODO: Add destructor
         virtual void simulate(std::size_t tick);
         nts::Pin &getPin(std::size_t pinId);
 
