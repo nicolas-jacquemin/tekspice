@@ -28,7 +28,7 @@ namespace nts {
     class Error : public std::exception {
       public:
         Error(std::string const &message) : _message(message) {}
-        const char *what() const noexcept override { return _message.c_str(); } // MAYBE: move to proper file
+        const char *what() const noexcept override { return (_message.c_str()); } // MAYBE: move to proper file
 
       private:
         std::string _message;
