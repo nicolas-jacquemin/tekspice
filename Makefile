@@ -9,9 +9,11 @@ SRC		=	src/main.cpp \
 			src/parser.cpp \
 			src/Circuit.cpp \
 			src/Component.cpp \
+			src/Factory.cpp \
 			src/Pin.cpp \
 			src/Link.cpp \
 			src/components/True.cpp \
+			src/components/Output.cpp \
 
 # TODO: Fix obj files
 # OBJ		=	$(SRC:.cpp=.o)
