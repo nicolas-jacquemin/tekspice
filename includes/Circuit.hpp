@@ -12,10 +12,12 @@
 namespace nts {
     class Circuit {
       public:
-        void addComponent(std::string name, IComponent &component);
+        // TODO: Add destructor
+        Circuit(std::map<std::string, std::string> components, std::vector<std::pair<std::string, std::string>> links);
+        nts::AComponent &getComponent(std::string name);
 
       private:
         std::size_t _tick = 0;
-        std::map<std::string, IComponent &> _components = {};
+        std::map<std::string, std::unique_ptr<AComponent>> _components = {};
     };
 }
