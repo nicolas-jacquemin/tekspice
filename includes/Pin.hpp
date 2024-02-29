@@ -20,10 +20,13 @@ namespace nts {
             OUTPUT
         };
 
+        // TODO: Add destructor
         Pin(nts::IComponent &parent, nts::Pin::Type type, size_t id);
+        nts::Tristate getState() const;
 
         // MAYBE: Add getters
         IComponent &_parent;
+        // TODO: Output pins can have multiples links
         std::shared_ptr<nts::Link> _link;
         nts::Pin::Type _type;
 
