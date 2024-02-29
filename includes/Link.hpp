@@ -16,7 +16,7 @@ namespace nts {
       public:
         Link(Pin &a, Pin &b);
 
-      private:
+      // private:
         Pin &_source;
         Pin &_destination;
     };
