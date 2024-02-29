@@ -27,7 +27,10 @@ void nts::Components::Input::setStdin(std::string const &stdin) {
         _stdin = nts::Tristate::False;
     else if (stdin == "1")
         _stdin = nts::Tristate::True;
-    else
+    else if (stdin == "U")
         _stdin = nts::Tristate::Undefined;
+    else
+        throw nts::Error("Invalid input value");
+
     return;
 }
