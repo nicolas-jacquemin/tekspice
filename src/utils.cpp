@@ -8,7 +8,7 @@
 #include "utils.hpp"
 
 std::string uncommentString(const std::string &string) {
-    std::size_t index = string.find('#');
+    size_t index = string.find('#');
 
     if (index != std::string::npos)
         return (string.substr(0, index));

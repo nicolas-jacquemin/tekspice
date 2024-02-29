@@ -14,7 +14,7 @@ namespace nts {
         class True : public AComponent {
           public:
             True();
-            nts::Tristate getPinState(std::size_t outputPinId);
+            nts::Tristate getPinState(size_t outputPinId);
         };
     }
 }

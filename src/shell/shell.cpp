@@ -7,6 +7,7 @@
 
 #include "Circuit.hpp"
 #include "components/Input.hpp"
+#include "components/Clock.hpp"
 
 static void display(nts::Circuit &circuit) {
     (void)circuit;
@@ -35,8 +36,10 @@ static void setValue(nts::Circuit &circuit, std::string line) {
 
     if (dynamic_cast<nts::Components::Input *>(&component)) {
         dynamic_cast<nts::Components::Input &>(component).setStdin(value);
+    } else if (dynamic_cast<nts::Components::Clock *>(&component)) {
+        dynamic_cast<nts::Components::Clock &>(component).setStdin(value);
     } else
-        throw nts::Error("Invalid command: component is not an input");
+        throw nts::Error("Invalid command: component state cannot be set");
 }
 
 void shell(nts::Circuit circuit) {

@@ -22,7 +22,7 @@ namespace nts {
         void displayInputs();
 
       private:
-        std::size_t _tick = 0;
+        size_t _tick = 0;
         std::map<std::string, std::unique_ptr<nts::AComponent>> _components = {};
     };
 }

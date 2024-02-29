@@ -18,6 +18,7 @@ SRC		=	src/main.cpp \
 			src/components/False.cpp \
 			src/components/Output.cpp \
 			src/components/Input.cpp \
+			src/components/Clock.cpp \
 
 # TODO: Fix obj files
 # OBJ		=	$(SRC:.cpp=.o)

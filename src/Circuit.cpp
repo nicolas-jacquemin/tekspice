@@ -52,11 +52,13 @@ void nts::Circuit::displayOutputs() {
 }
 
 void nts::Circuit::displayInputs() {
-    for (auto &component : _components)
-        if (dynamic_cast<nts::Components::Input *>(component.second.get()))
+    for (auto &component : _components) {
+        auto componentPtr = component.second.get();
+        if (dynamic_cast<nts::Components::Input *>(componentPtr) || dynamic_cast<nts::Components::Clock *>(componentPtr))
             std::cout << "  "
                       << component.first
                       << ": "
                       << displayTristate(component.second->getPin(1).getState())
                       << std::endl;
+    }
 }

@@ -14,8 +14,8 @@ namespace nts {
         class Input : public AComponent {
           public:
             Input();
-            nts::Tristate getPinState(std::size_t outputPinId);
-            void simulate(std::size_t tick);
+            nts::Tristate getPinState(size_t outputPinId);
+            void simulate(size_t tick);
             void setStdin(std::string const &stdin);
 
           private:

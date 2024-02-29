@@ -14,6 +14,7 @@
 #include "components/False.hpp"
 #include "components/Output.hpp"
 #include "components/Input.hpp"
+#include "components/Clock.hpp"
 
 namespace nts {
     class ComponentFactory {
@@ -30,7 +31,8 @@ namespace nts {
             {"true", &nts::ComponentFactory::createComponent<nts::Components::True>},
             {"false", &nts::ComponentFactory::createComponent<nts::Components::False>},
             {"output", &nts::ComponentFactory::createComponent<nts::Components::Output>},
-            {"input", &nts::ComponentFactory::createComponent<nts::Components::Input>}
+            {"input", &nts::ComponentFactory::createComponent<nts::Components::Input>},
+            {"clock", &nts::ComponentFactory::createComponent<nts::Components::Clock>},
         };
     };
 }

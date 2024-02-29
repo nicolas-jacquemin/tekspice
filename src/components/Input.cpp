@@ -11,15 +11,14 @@ nts::Components::Input::Input() {
     _pins.insert(std::make_pair(1, Pin(*this, nts::Pin::Type::OUTPUT, 1)));
 }
 
-nts::Tristate nts::Components::Input::getPinState(std::size_t outputPinId) {
+nts::Tristate nts::Components::Input::getPinState(size_t outputPinId) {
     getPin(outputPinId);
     return (_state);
 }
 
-void nts::Components::Input::simulate(std::size_t tick) {
+void nts::Components::Input::simulate(size_t tick) {
     (void)tick;
     _state = _stdin;
-    return;
 }
 
 void nts::Components::Input::setStdin(std::string const &stdin) {
@@ -31,6 +30,4 @@ void nts::Components::Input::setStdin(std::string const &stdin) {
         _stdin = nts::Tristate::Undefined;
     else
         throw nts::Error("Invalid input value");
-
-    return;
 }
