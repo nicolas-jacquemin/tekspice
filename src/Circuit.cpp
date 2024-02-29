@@ -7,6 +7,7 @@
 
 #include "utils.hpp"
 #include "Factory.hpp"
+#include "Circuit.hpp"
 
 nts::Circuit::Circuit(std::map<std::string, std::string> components, std::vector<std::pair<std::string, std::string>> links) {
     nts::ComponentFactory factory;
@@ -27,4 +28,35 @@ nts::AComponent &nts::Circuit::getComponent(std::string name) {
         throw nts::Error("Component \"" + name + "\" does not exist in the circuit");
 
     return (*component->second);
+}
+
+size_t nts::Circuit::getTick() const {
+    return (_tick);
+}
+
+
+void nts::Circuit::simulate() {
+    for (auto &component : _components)
+        component.second->simulate(_tick);
+    _tick++;
+}
+
+void nts::Circuit::displayOutputs() {
+    for (auto &component : _components)
+        if (dynamic_cast<nts::Components::Output *>(component.second.get()))
+            std::cout << "  "
+                      << component.first
+                      << ": "
+                      << displayTristate(component.second->getPin(1).getState())
+                      << std::endl;
+}
+
+void nts::Circuit::displayInputs() {
+    for (auto &component : _components)
+        if (dynamic_cast<nts::Components::Input *>(component.second.get()))
+            std::cout << "  "
+                      << component.first
+                      << ": "
+                      << displayTristate(component.second->getPin(1).getState())
+                      << std::endl;
 }
