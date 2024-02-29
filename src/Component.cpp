@@ -13,6 +13,9 @@ void nts::AComponent::simulate(std::size_t tick) {
 }
 
 nts::Pin &nts::AComponent::getPin(std::size_t pinId) {
-    // MAYBE: Error handling if pin does not exist
-    return (_pins.find(pinId)->second);
+    auto it = _pins.find(pinId);
+    if (it == _pins.end())
+        throw nts::Error("Pin (" + std::to_string(pinId) + ") does not exist");
+
+    return (it->second);
 }
