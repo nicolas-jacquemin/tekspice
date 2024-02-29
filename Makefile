@@ -15,6 +15,7 @@ SRC		=	src/main.cpp \
 			src/Pin.cpp \
 			src/Link.cpp \
 			src/components/True.cpp \
+			src/components/False.cpp \
 			src/components/Output.cpp \
 			src/components/Input.cpp \
 

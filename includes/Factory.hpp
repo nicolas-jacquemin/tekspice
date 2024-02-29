@@ -11,6 +11,7 @@
 #include "Component.hpp"
 
 #include "components/True.hpp"
+#include "components/False.hpp"
 #include "components/Output.hpp"
 #include "components/Input.hpp"
 
@@ -27,6 +28,7 @@ namespace nts {
 
         std::map<std::string, std::unique_ptr<nts::AComponent> (nts::ComponentFactory::*)()> _components = {
             {"true", &nts::ComponentFactory::createComponent<nts::Components::True>},
+            {"false", &nts::ComponentFactory::createComponent<nts::Components::False>},
             {"output", &nts::ComponentFactory::createComponent<nts::Components::Output>},
             {"input", &nts::ComponentFactory::createComponent<nts::Components::Input>}
         };
