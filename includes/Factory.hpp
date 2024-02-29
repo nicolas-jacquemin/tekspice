@@ -11,6 +11,7 @@
 #include "Component.hpp"
 
 #include "components/True.hpp"
+#include "components/Output.hpp"
 
 namespace nts {
     class ComponentFactory {
@@ -25,6 +26,7 @@ namespace nts {
 
         std::map<std::string, std::unique_ptr<nts::AComponent> (nts::ComponentFactory::*)()> _components = {
             {"true", &nts::ComponentFactory::createComponent<nts::Components::True>},
+            {"output", &nts::ComponentFactory::createComponent<nts::Components::Output>}
         };
     };
 }
