@@ -5,7 +5,6 @@
 ** Shell
 */
 
-
 #include "Circuit.hpp"
 #include "components/Input.hpp"
 #include "components/Clock.hpp"
