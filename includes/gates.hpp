@@ -12,5 +12,6 @@
 namespace nts {
     namespace gates {
         nts::Tristate andGate(nts::Tristate a, nts::Tristate b);
+        nts::Tristate orGate(nts::Tristate a, nts::Tristate b);
     }
 }
