@@ -1,0 +1,11 @@
+> tick: 0
+input(s):
+  cl: U
+output(s):
+  out: U
+> > tick: 1
+input(s):
+  cl: U
+output(s):
+  out: U
+> 
