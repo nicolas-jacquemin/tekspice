@@ -5,9 +5,12 @@
 ** Shell
 */
 
+
 #include "Circuit.hpp"
 #include "components/Input.hpp"
 #include "components/Clock.hpp"
+
+extern std::stringstream shellInputs;
 
 static void display(nts::Circuit &circuit) {
     (void)circuit;
@@ -47,7 +50,7 @@ void shell(nts::Circuit circuit) {
     std::cout << "> ";
 
     std::string line;
-    while (std::getline(std::cin, line)) {
+    while (std::getline(shellInputs, line)) {
         if (line == "exit")
             return;
         if (line == "display")
