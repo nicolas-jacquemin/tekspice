@@ -18,6 +18,7 @@
 #include "components/And.hpp"
 #include "components/Or.hpp"
 #include "components/Xor.hpp"
+#include "components/Not.hpp"
 
 namespace nts {
     class ComponentFactory {
@@ -38,7 +39,8 @@ namespace nts {
             {"clock", &nts::ComponentFactory::createComponent<nts::Components::Clock>},
             {"and", &nts::ComponentFactory::createComponent<nts::Components::And>},
             {"or", &nts::ComponentFactory::createComponent<nts::Components::Or>},
-            {"xor", &nts::ComponentFactory::createComponent<nts::Components::Xor>}
+            {"xor", &nts::ComponentFactory::createComponent<nts::Components::Xor>},
+            {"not", &nts::ComponentFactory::createComponent<nts::Components::Not>}
         };
     };
 }

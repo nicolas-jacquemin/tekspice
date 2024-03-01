@@ -33,3 +33,12 @@ nts::Tristate nts::gates::xorGate(nts::Tristate a, nts::Tristate b) {
 
     return (nts::Tristate::True);
 }
+
+nts::Tristate nts::gates::notGate(nts::Tristate a) {
+    if (a == nts::Tristate::True)
+        return (nts::Tristate::False);
+    else if (a == nts::Tristate::False)
+        return (nts::Tristate::True);
+
+    return (nts::Tristate::Undefined);
+}
