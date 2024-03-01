@@ -18,6 +18,7 @@ namespace nts {
 
       // private:
         Pin &_source;
+        // MAYBE: _destination should be a list of pins
         Pin &_destination;
     };
 }
