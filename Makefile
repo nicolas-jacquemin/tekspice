@@ -22,6 +22,7 @@ SRC		=	src/main.cpp \
 			src/components/Clock.cpp \
 			src/components/And.cpp \
 			src/components/Or.cpp \
+			src/components/Xor.cpp \
 
 # TODO: Fix obj files
 # OBJ		=	$(SRC:.cpp=.o)
