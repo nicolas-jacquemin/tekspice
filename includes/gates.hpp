@@ -16,5 +16,6 @@ namespace nts {
         nts::Tristate xorGate(nts::Tristate a, nts::Tristate b);
         nts::Tristate notGate(nts::Tristate a);
         nts::Tristate nandGate(nts::Tristate a, nts::Tristate b);
+        nts::Tristate norGate(nts::Tristate a, nts::Tristate b);
     }
 }

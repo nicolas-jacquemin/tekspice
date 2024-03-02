@@ -22,6 +22,7 @@
 #include "components/And4081.hpp"
 #include "components/Or4071.hpp"
 #include "components/Nand4011.hpp"
+#include "components/Nor4001.hpp"
 
 namespace nts {
     class ComponentFactory {
@@ -47,6 +48,7 @@ namespace nts {
             {"4081", &nts::ComponentFactory::createComponent<nts::Components::And4081>},
             {"4071", &nts::ComponentFactory::createComponent<nts::Components::Or4071>},
             {"4011", &nts::ComponentFactory::createComponent<nts::Components::Nand4011>},
+            {"4001", &nts::ComponentFactory::createComponent<nts::Components::Nor4001>},
         };
     };
 }
