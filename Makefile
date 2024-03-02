@@ -27,6 +27,7 @@ SRC		=	src/utils.cpp \
 			src/components/Not.cpp \
 			src/components/And4081.cpp \
 			src/components/Or4071.cpp \
+			src/components/Nand4011.cpp \
 
 SRCTESTS = $(shell find tests -name "*.cpp")
 

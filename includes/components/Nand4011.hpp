@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2024
 ** NanoTekSpice
 ** File description:
-** Header file - And4081 component
+** Header file - Nand4011 component
 */
 
 #pragma once
@@ -11,9 +11,9 @@
 
 namespace nts {
     namespace Components {
-        class And4081 : public AComponent {
+        class Nand4011 : public AComponent {
           public:
-            And4081();
+            Nand4011();
             nts::Tristate getPinState(size_t outputPinId);
         };
     }
