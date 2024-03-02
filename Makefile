@@ -5,10 +5,11 @@
 ## Makefile
 ##
 
-SRC		=	src/main.cpp \
-			src/utils.cpp \
+SRCBASIC	=	src/main.cpp \
+				src/shell.cpp
+
+SRC		=	src/utils.cpp \
 			src/parser.cpp \
-			src/shell.cpp \
 			src/gates.cpp \
 			src/Circuit.cpp \
 			src/Component.cpp \
@@ -24,6 +25,9 @@ SRC		=	src/main.cpp \
 			src/components/Or.cpp \
 			src/components/Xor.cpp \
 			src/components/Not.cpp \
+			src/components/And4081.cpp \
+
+SRCTESTS = $(shell find tests -name "*.cpp")
 
 # TODO: Fix obj files
 # OBJ		=	$(SRC:.cpp=.o)
@@ -33,7 +37,7 @@ NAME	=	nanotekspice
 FLAGS	=	-Wall -Wextra -Werror -I./includes
 
 all:
-	@g++ -o $(NAME) $(FLAGS) $(SRC)
+	@g++ -o $(NAME) $(FLAGS) $(SRC) $(SRCBASIC)
 
 clean:
 	rm -f $(OBJ)
@@ -43,5 +47,6 @@ fclean: clean
 
 re: fclean all
 
-run: all
-	@./$(NAME)
+run:
+	@g++ -o unit_tests $(SRC) $(SRCTESTS) $(FLAGS) -lcriterion
+	@./unit_tests
