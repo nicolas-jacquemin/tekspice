@@ -19,6 +19,7 @@
 #include "components/Or.hpp"
 #include "components/Xor.hpp"
 #include "components/Not.hpp"
+#include "components/And4081.hpp"
 
 namespace nts {
     class ComponentFactory {
@@ -40,7 +41,8 @@ namespace nts {
             {"and", &nts::ComponentFactory::createComponent<nts::Components::And>},
             {"or", &nts::ComponentFactory::createComponent<nts::Components::Or>},
             {"xor", &nts::ComponentFactory::createComponent<nts::Components::Xor>},
-            {"not", &nts::ComponentFactory::createComponent<nts::Components::Not>}
+            {"not", &nts::ComponentFactory::createComponent<nts::Components::Not>},
+            {"4081", &nts::ComponentFactory::createComponent<nts::Components::And4081>}
         };
     };
 }
