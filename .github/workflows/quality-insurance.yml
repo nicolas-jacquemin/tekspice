@@ -12,7 +12,7 @@ jobs:
   compilation_and_tests:
     name: Check program compilation
     runs-on: ubuntu-latest
-    container: registry.codinbox.fr/epitech/epitest-mirror:main
+    container: epitechcontent/epitest-docker:latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
