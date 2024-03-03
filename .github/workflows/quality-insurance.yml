@@ -1,0 +1,33 @@
+name: TekSpice - Quality Insurance
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  compilation_and_tests:
+    name: Check program compilation
+    runs-on: ubuntu-latest
+    container: registry.codinbox.fr/epitech/epitest-mirror:main
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Make
+        run: make
+
+      - name: Make clean
+        run: make clean
+
+      - name: Check executables
+        run: |
+          if [ ! -x nanotekspice ]; then
+            echo "'nanotekspice' does not exist or is not executable"
+            exit 1
+          fi
+
+      - name: Run tests
+        run: make run
