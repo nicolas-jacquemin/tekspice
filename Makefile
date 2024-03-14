@@ -52,6 +52,6 @@ fclean: clean
 
 re: fclean all
 
-run:
+tests_run:
 	@g++ -o unit_tests $(SRC) $(SRCTESTS) $(FLAGS) -lcriterion
 	@./unit_tests
